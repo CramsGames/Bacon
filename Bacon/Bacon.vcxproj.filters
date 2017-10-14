@@ -111,6 +111,9 @@
     <ClInclude Include="Vertex.h">
       <Filter>Header Files\Rendering\Mesh</Filter>
     </ClInclude>
+    <ClInclude Include="LambertShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -169,6 +172,9 @@
     </ClCompile>
     <ClCompile Include="Model.cpp">
       <Filter>Source Files\Rendering\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="LambertShader.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

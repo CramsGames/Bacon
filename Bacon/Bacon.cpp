@@ -22,14 +22,15 @@
 #include "Model.h"
 #include "PerspCamera.h"
 #include "UnlitShader.h"
+#include "LambertShader.h"
 #include "Texture.h"
 
 // Entry - lowercase because... Windows
 int main () {
 	// Create window and camera
-	Window window = Window::Window (WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE, WINDOW_WINDOWED);
-	Transform cameraTransform = Transform::Transform ();
-	PerspCamera camera = PerspCamera::PerspCamera (&cameraTransform, WINDOW_WIDTH, WINDOW_HEIGHT, glm::half_pi<double> (), CAMERA_NEAR, CAMERA_FAR);
+	Window window = Window (WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE, WINDOW_WINDOWED);
+	Transform cameraTransform = Transform ();
+	PerspCamera camera = PerspCamera (&cameraTransform, WINDOW_WIDTH, WINDOW_HEIGHT, glm::half_pi<double> (), CAMERA_NEAR, CAMERA_FAR);
 
 	// Create mesh
 	/*
@@ -61,13 +62,14 @@ int main () {
 	Mesh mesh = Model::Load ("res\\models\\ship.obj").ToMesh ();
 
 	// Mesh transform
-	Transform meshTransform = Transform::Transform (glm::vec3 (0, 0, 10));
+	Transform meshTransform = Transform (glm::vec3 (0, 0, 10));
 
 	// Mesh texture
-	Texture texture = Texture::Texture ("res\\textures\\mc_atlas.png");
+	Texture texture = Texture ("res\\textures\\mc_atlas.png");
 
 	// Shader used to render
-	UnlitShader shader = UnlitShader::UnlitShader ("res\\shaders\\unlit");
+	//UnlitShader shader = UnlitShader ("res\\shaders\\unlit");
+	LambertShader shader = LambertShader ("res\\shaders\\lambert");
 
 	// Game loop
 	while (window.IsOpen ()) {
@@ -104,7 +106,11 @@ int main () {
 		shader.Bind ();
 
 		// Update shader information - pass to GPU
-		shader.Update (meshTransform, camera);
+
+		glm::vec3 ambient = glm::vec3 (0.2f, 0.2f, 0.2f);
+		glm::vec3 lightPos = cameraTransform.position;
+		glm::vec3 lightColor = glm::vec3 (1.0f, 1.0f, 1.0f);
+		shader.Update (meshTransform, camera, ambient, glm::vec4 (lightPos, 1), lightColor);
 
 		// Draw the mesh
 		mesh.Draw ();
