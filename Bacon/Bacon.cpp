@@ -19,6 +19,7 @@
 #include "Window.h"
 #include "Time.h"
 #include "Mesh.h"
+#include "Model.h"
 #include "PerspCamera.h"
 #include "UnlitShader.h"
 #include "Texture.h"
@@ -31,6 +32,7 @@ int main () {
 	PerspCamera camera = PerspCamera::PerspCamera (&cameraTransform, WINDOW_WIDTH, WINDOW_HEIGHT, glm::half_pi<double> (), CAMERA_NEAR, CAMERA_FAR);
 
 	// Create mesh
+	/*
 	glm::vec3 *position = new glm::vec3 [3] { // Positional coordinates follow the right hand rule. +X is left, +Y is up, +Z is forward
 		glm::vec3 (0.5f, 0.5f, 0.0f),
 		glm::vec3 (0.5f, -0.5f, 0.0f),
@@ -54,6 +56,9 @@ int main () {
 	};
 
 	Mesh mesh = Mesh::Mesh (position, texcoord, normal, 3, indices, 3);
+	*/
+
+	Mesh mesh = Model::Load ("res\\models\\ship.obj").ToMesh ();
 
 	// Mesh transform
 	Transform meshTransform = Transform::Transform (glm::vec3 (0, 0, 10));

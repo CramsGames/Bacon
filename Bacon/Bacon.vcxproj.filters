@@ -13,6 +13,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Rendering">
+      <UniqueIdentifier>{556f4ba4-47e8-4af5-8997-b1c9f8aa8f13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rendering\Shaders">
+      <UniqueIdentifier>{cb1404ea-66a3-41f0-96ec-34d25a99d3c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rendering\Cameras">
+      <UniqueIdentifier>{ab41dd38-30ce-4e97-ab2d-5e87978b92da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene">
+      <UniqueIdentifier>{38c8aaff-7358-4c32-82d3-068a4cee0747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scene">
+      <UniqueIdentifier>{9d5a77c8-0990-4e38-98ac-054d1dcf6afd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rendering">
+      <UniqueIdentifier>{396eb8a2-d074-4659-9282-3577f541ce7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rendering\Shaders">
+      <UniqueIdentifier>{215dcc03-efb4-486d-bf61-5a7023608b5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rendering\Cameras">
+      <UniqueIdentifier>{b9fd5b30-c02a-4e57-a9a1-2cd7efb6ee1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene\Components">
+      <UniqueIdentifier>{44667942-62c5-47c6-ad70-cde23cc1810d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scene\Components">
+      <UniqueIdentifier>{3271ef7c-fc5d-47f4-87fc-373321f52fdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rendering\Mesh">
+      <UniqueIdentifier>{f5312eb2-63d4-46a3-b8b8-9b99e45f37d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rendering\Mesh">
+      <UniqueIdentifier>{1edbd08c-5881-4eb8-951b-634d16d3ea73}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -27,29 +63,53 @@
     <ClInclude Include="Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Mesh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UnlitShader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Transform.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PerspCamera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Time.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Texture.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="PerspCamera.h">
+      <Filter>Header Files\Rendering\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Rendering\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="UnlitShader.h">
+      <Filter>Header Files\Rendering\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files\Rendering\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="GBuffer.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Header Files\Scene\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshComponent.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Header Files\Rendering\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Header Files\Rendering\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Header Files\Rendering\Mesh</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -59,32 +119,56 @@
     <ClCompile Include="Bacon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Mesh.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Shader.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files\Rendering</Filter>
     </ClCompile>
     <ClCompile Include="UnlitShader.cpp">
+      <Filter>Source Files\Rendering\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Transform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Camera.cpp">
+    <ClCompile Include="Window.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Rendering\Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files\Rendering\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="PerspCamera.cpp">
+      <Filter>Source Files\Rendering\Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="GBuffer.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Source Files\Scene\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Time.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Source Files\Rendering\Mesh</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>Source Files\Rendering\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files\Rendering\Mesh</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
